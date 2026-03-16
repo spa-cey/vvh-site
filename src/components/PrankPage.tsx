@@ -8,15 +8,23 @@ const CAUTION_TEXT =
   "UNDER CONSTRUCTION \u00A0\u2022\u00A0 HARD HATS REQUIRED \u00A0\u2022\u00A0 AUTHORIZED VIBES ONLY \u00A0\u2022\u00A0 CAUTION: CREW IS VIBING \u00A0\u2022\u00A0 DO NOT DISTURB \u00A0\u2022\u00A0 UNDER CONSTRUCTION \u00A0\u2022\u00A0 HARD HATS REQUIRED \u00A0\u2022\u00A0 AUTHORIZED VIBES ONLY \u00A0\u2022\u00A0 CAUTION: CREW IS VIBING \u00A0\u2022\u00A0 DO NOT DISTURB \u00A0\u2022\u00A0 ";
 
 export function PrankPage() {
+  const [entered, setEntered] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(t);
-  }, []);
+  const enterSite = useCallback(() => {
+    if (entered) return;
+    setEntered(true);
+
+    const audio = audioRef.current;
+    if (audio) {
+      audio.currentTime = 26;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+    }
+
+    setTimeout(() => setLoaded(true), 400);
+  }, [entered]);
 
   const toggleMusic = useCallback(() => {
     const audio = audioRef.current;
@@ -26,35 +34,57 @@ export function PrankPage() {
       audio.pause();
       setPlaying(false);
     } else {
-      audio.currentTime = 26;
-      audio.play().then(() => {
-        setPlaying(true);
-        setHasInteracted(true);
-      }).catch(() => {});
+      audio.currentTime = audio.currentTime > 26 ? audio.currentTime : 26;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
     }
   }, [playing]);
 
-  // Try autoplay on first user interaction anywhere on the page
-  useEffect(() => {
-    if (hasInteracted) return;
+  // Splash screen — requires interaction to unlock audio
+  if (!entered) {
+    return (
+      <div className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-black px-6">
+        <audio ref={audioRef} src="/tunak.mp3" loop preload="auto" />
 
-    const handleFirstInteraction = () => {
-      const audio = audioRef.current;
-      if (!audio || hasInteracted) return;
-      audio.currentTime = 26;
-      audio.play().then(() => {
-        setPlaying(true);
-        setHasInteracted(true);
-      }).catch(() => {});
-    };
+        {/* Hazard lines */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, transparent, transparent 40px, #CC0000 40px, #CC0000 42px)",
+          }}
+        />
 
-    window.addEventListener("click", handleFirstInteraction, { once: true });
-    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
-    return () => {
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
-    };
-  }, [hasInteracted]);
+        <Image
+          src="/logo-transparent.png"
+          alt="VVH Construction Group"
+          width={200}
+          height={67}
+          className="mb-10 h-auto w-[120px] sm:w-[160px] md:w-[200px]"
+          style={{ filter: "brightness(3) contrast(1.2)" }}
+          priority
+        />
+
+        <button
+          onClick={enterSite}
+          className="group relative border border-red/50 bg-red/5 px-10 py-5 transition-all duration-300 hover:border-red hover:bg-red/10 active:scale-95 sm:px-14 sm:py-6"
+        >
+          {/* Corner accents */}
+          <div className="absolute left-0 top-0 h-3 w-[2px] bg-red" />
+          <div className="absolute left-0 top-0 h-[2px] w-3 bg-red" />
+          <div className="absolute bottom-0 right-0 h-3 w-[2px] bg-red" />
+          <div className="absolute bottom-0 right-0 h-[2px] w-3 bg-red" />
+
+          <span className="font-display text-2xl tracking-[0.2em] text-white sm:text-3xl">
+            ENTER SITE
+          </span>
+        </button>
+
+        <p className="mt-6 text-[11px] text-gray-700 sm:text-xs">
+          Best experienced with sound on
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-[100dvh] overflow-hidden bg-black">

@@ -17,6 +17,7 @@ export function Footer() {
                 width={40}
                 height={40}
                 className="h-9 w-auto"
+                style={{ filter: "brightness(3) contrast(1.2)" }}
               />
               <div>
                 <span className="font-display text-lg tracking-wide text-white">

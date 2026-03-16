@@ -122,11 +122,12 @@ export function PrankPage() {
           style={{ transitionDelay: "200ms" }}
         >
           <Image
-            src="/images/logo.png"
+            src="/logo-transparent.png"
             alt="VVH Construction Group"
             width={220}
             height={73}
             className="mx-auto h-auto w-[140px] sm:w-[180px] md:w-[220px]"
+            style={{ filter: "brightness(3) contrast(1.2)" }}
             priority
           />
         </div>

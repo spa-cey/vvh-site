@@ -47,6 +47,7 @@ export function Navbar() {
             width={48}
             height={48}
             className="h-10 w-auto md:h-12"
+            style={{ filter: "brightness(3) contrast(1.2)" }}
             priority
           />
           <div className="hidden sm:block">

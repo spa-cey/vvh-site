@@ -44,20 +44,12 @@ export function Navbar() {
           <Image
             src="/logo-transparent.png"
             alt="VVH Construction Group"
-            width={48}
+            width={160}
             height={48}
-            className="h-10 w-auto md:h-12"
+            className="h-12 w-auto md:h-14"
             style={{ filter: "brightness(3) contrast(1.2)" }}
             priority
           />
-          <div className="hidden sm:block">
-            <span className="font-display text-xl tracking-wide text-white">
-              VVH
-            </span>
-            <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
-              Construction Group
-            </span>
-          </div>
         </Link>
 
         {/* Desktop nav */}

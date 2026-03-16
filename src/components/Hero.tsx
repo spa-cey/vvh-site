@@ -7,17 +7,24 @@ import { ChevronDown } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black px-6 text-center">
-      {/* Background image */}
-      <Image
-        src="/images/hero-bg.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        priority
-        quality={85}
-      />
+      {/* Background video time-lapse */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+        poster="/images/hero-bg.jpg"
+      >
+        <source src="/hero-loop.mp4" type="video/mp4" />
+      </video>
+      {/* Fallback static image for no-JS / unsupported */}
+      <noscript>
+        <Image src="/images/hero-bg.jpg" alt="" fill className="object-cover" priority />
+      </noscript>
+
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/65" />
       {/* Bottom gradient fade */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
 

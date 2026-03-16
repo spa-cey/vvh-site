@@ -20,7 +20,7 @@ export function AboutPreview() {
               <div className="mt-2 h-1 w-16 bg-red" />
               <p className="mt-6 text-base leading-relaxed text-gray-400">
                 VVH Construction Group is a full-service construction company
-                based in New Jersey, specializing in residential and commercial
+                specializing in residential and commercial
                 projects. We handle everything from home renovations and exterior
                 restoration to large-scale builds and new construction.
               </p>

@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "View completed projects by VVH Construction Group. Residential builds, commercial projects, renovations, and exterior work across New Jersey.",
+    "View completed projects by VVH Construction Group. Residential builds, commercial projects, renovations, and exterior work.",
 };
 
 const PROJECTS = [
@@ -12,7 +12,7 @@ const PROJECTS = [
     id: 1,
     type: "Residential",
     title: "New Home Construction",
-    desc: "Ground-up residential build in suburban NJ.",
+    desc: "Ground-up residential build.",
     image: "/images/service-residential.jpg",
     aspect: "aspect-[3/4]",
   },
@@ -98,7 +98,7 @@ export default function PortfolioPage() {
           </h1>
           <div className="mx-auto mt-3 h-1 w-16 bg-red" />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
-            A selection of our completed projects across New Jersey. We add new
+            A selection of our completed projects. We add new
             work as projects are finished.
           </p>
         </div>

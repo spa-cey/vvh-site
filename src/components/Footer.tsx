@@ -33,7 +33,7 @@ export function Footer() {
             </p>
             <p className="mt-2 text-sm leading-relaxed text-gray-500">
               Full-service construction company delivering premium residential
-              and commercial projects across New Jersey.
+              and commercial projects.
             </p>
             <div className="mt-6 flex gap-4">
               <a

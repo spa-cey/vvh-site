@@ -33,7 +33,7 @@ export function Hero() {
 
         {/* Main heading */}
         <h1 className="font-display text-5xl leading-[0.95] tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl">
-          New Jersey&apos;s Next Generation
+          The Next Generation
           <br />
           <span className="text-red">of Construction</span>
         </h1>

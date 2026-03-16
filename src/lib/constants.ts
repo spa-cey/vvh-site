@@ -4,7 +4,7 @@ export const COMPANY = {
   slogan: "Building What's Next.",
   email: "info@vvh.group",
   phone: "(908) 555-0199",
-  area: "New Jersey",
+  area: "Northeast US",
   hours: "Monday\u2013Saturday, 7:00 AM \u2013 6:00 PM",
 } as const;
 
@@ -59,7 +59,7 @@ export const SERVICES = [
     summary:
       "Roof repairs, replacements, and structural improvements. We ensure your property is protected and built to code.",
     description:
-      "Roof repairs, replacements, and structural improvements. We ensure your property is protected and built to code. From emergency leak repairs to complete roof replacements and structural reinforcement, our team delivers reliable work that stands up to New Jersey\u2019s demanding weather conditions.",
+      "Roof repairs, replacements, and structural improvements. We ensure your property is protected and built to code. From emergency leak repairs to complete roof replacements and structural reinforcement, our team delivers reliable work that stands up to demanding Northeast weather conditions.",
   },
   {
     id: "management",

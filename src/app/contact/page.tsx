@@ -7,7 +7,7 @@ import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get a free estimate from VVH Construction Group. Contact us for residential and commercial construction projects in New Jersey.",
+    "Get a free estimate from VVH Construction Group. Contact us for residential and commercial construction projects.",
 };
 
 export default function ContactPage() {
@@ -117,7 +117,7 @@ export default function ContactPage() {
               <div className="mt-6 flex aspect-[4/3] flex-col items-center justify-center border border-charcoal-light bg-charcoal">
                 <MapPin className="h-10 w-10 text-gray-700" />
                 <p className="mt-3 text-xs uppercase tracking-[0.2em] text-gray-700">
-                  Serving All of New Jersey
+                  Serving the Northeast
                 </p>
               </div>
             </AnimateOnScroll>

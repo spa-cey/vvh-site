@@ -5,7 +5,7 @@ import { ServiceDetail } from "@/components/ServiceDetail";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "VVH Construction Group offers residential construction, commercial builds, renovations, exterior services, roofing, and project management across New Jersey.",
+    "VVH Construction Group offers residential construction, commercial builds, renovations, exterior services, roofing, and project management.",
 };
 
 export default function ServicesPage() {

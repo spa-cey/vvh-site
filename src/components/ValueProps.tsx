@@ -13,7 +13,7 @@ const iconMap = {
 
 export function ValueProps() {
   return (
-    <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+    <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
       {/* Blueprint grid background */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
         <svg width="100%" height="100%">
@@ -60,12 +60,12 @@ export function ValueProps() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Asymmetric header */}
-        <div className="mb-20 max-w-2xl">
+        <div className="mb-12 max-w-2xl sm:mb-20">
           <AnimateOnScroll animation="fade-up">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
               Why VVH
             </p>
-            <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+            <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
               The VVH
               <br />
               Difference

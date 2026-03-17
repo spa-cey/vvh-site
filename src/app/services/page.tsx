@@ -15,7 +15,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-black px-6 pt-36 pb-24 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 pt-28 pb-16 sm:px-6 sm:pt-36 sm:pb-24 lg:px-8">
         {/* Giant background text */}
         <div className="pointer-events-none absolute -right-4 top-16 select-none font-display text-[12rem] leading-none tracking-wide text-white/[0.015] md:text-[20rem]">
           SERVICES
@@ -28,7 +28,7 @@ export default function ServicesPage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                   What We Do
                 </p>
-                <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+                <h1 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                   Our
                   <br />
                   Services
@@ -47,12 +47,12 @@ export default function ServicesPage() {
 
           {/* Quick-nav service chips */}
           <AnimateOnScroll animation="fade-up" delay={300}>
-            <div className="mt-16 flex flex-wrap gap-2">
+            <div className="-mx-5 mt-12 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-16 sm:flex-wrap sm:overflow-x-visible sm:px-0 sm:pb-0">
               {SERVICES.map((service, i) => (
                 <a
                   key={service.id}
                   href={`#${service.id}`}
-                  className="group flex items-center gap-2 border border-white/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 transition-all duration-300 hover:border-red/50 hover:bg-red/10 hover:text-white"
+                  className="group flex shrink-0 items-center gap-2 border border-white/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 transition-all duration-300 hover:border-red/50 hover:bg-red/10 hover:text-white"
                 >
                   <span className="text-red/50">{String(i + 1).padStart(2, "0")}</span>
                   {service.title}
@@ -97,10 +97,10 @@ export default function ServicesPage() {
       </div>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <AnimateOnScroll animation="scale">
-            <div className="relative overflow-hidden bg-red p-12 md:p-20">
+            <div className="relative overflow-hidden bg-red p-8 sm:p-12 md:p-20">
               <div
                 className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
                 style={{
@@ -115,7 +115,7 @@ export default function ServicesPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
                     Need Something Specific?
                   </p>
-                  <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+                  <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                     Let&apos;s Discuss
                     <br />
                     Your Project

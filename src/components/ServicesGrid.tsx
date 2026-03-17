@@ -80,14 +80,14 @@ export function ServicesGrid() {
         </svg>
       </div>
 
-      <div className="relative z-20 mx-auto max-w-7xl px-6 pb-32 pt-32 lg:px-8">
+      <div className="relative z-20 mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-6 md:pb-32 md:pt-32 lg:px-8">
         {/* Section header — left-aligned, editorial style */}
-        <div className="mb-20 grid items-end gap-6 lg:grid-cols-12">
+        <div className="mb-12 grid items-end gap-6 sm:mb-20 lg:grid-cols-12">
           <AnimateOnScroll animation="fade-left" className="lg:col-span-7">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
               What We Do
             </p>
-            <h2 className="mt-3 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+            <h2 className="mt-3 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Services Built
               <br />
               for Results
@@ -120,7 +120,7 @@ export function ServicesGrid() {
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
                   <div
-                    className="relative flex items-center gap-6 border-b border-white/5 px-2 py-7 transition-all duration-500 md:gap-10 md:px-6 md:py-9"
+                    className="relative flex items-center gap-4 border-b border-white/5 px-2 py-5 transition-all duration-500 sm:gap-6 sm:py-7 md:gap-10 md:px-6 md:py-9"
                     style={{
                       backgroundColor: isHovered
                         ? "rgba(204, 0, 0, 0.06)"
@@ -139,7 +139,7 @@ export function ServicesGrid() {
 
                     {/* Title + desc */}
                     <div className="flex-1">
-                      <h3 className="font-display text-2xl tracking-wider text-white transition-colors duration-300 group-hover:text-red md:text-3xl">
+                      <h3 className="font-display text-xl tracking-wider text-white transition-colors duration-300 group-hover:text-red sm:text-2xl md:text-3xl">
                         {service.title}
                       </h3>
                       <p className="mt-1 line-clamp-1 text-sm text-gray-500 transition-colors duration-300 group-hover:text-gray-400">

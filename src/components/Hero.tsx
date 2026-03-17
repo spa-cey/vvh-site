@@ -39,21 +39,21 @@ export function Hero() {
         </p>
 
         {/* Main heading */}
-        <h1 className="font-display text-5xl leading-[0.95] tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-7xl lg:text-8xl">
           The Next Generation
           <br />
           <span className="text-red">of Construction</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 md:text-xl">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 sm:mt-6 sm:text-lg md:text-xl">
           Residential and commercial construction services built on quality,
           transparency, and results. From renovations to ground-up builds — we
           bring your project to life.
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-4">
           <Link
             href="/contact"
             className="w-full bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition-colors duration-200 hover:bg-red-bright sm:w-auto"

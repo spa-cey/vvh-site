@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-black px-6 pt-36 pb-24 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 pt-28 pb-16 sm:px-6 sm:pt-36 sm:pb-24 lg:px-8">
         {/* Giant background text */}
         <div className="pointer-events-none absolute -right-4 top-16 select-none font-display text-[12rem] leading-none tracking-wide text-white/[0.015] md:text-[20rem]">
           CONTACT
@@ -28,7 +28,7 @@ export default function ContactPage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                   Get In Touch
                 </p>
-                <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+                <h1 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                   Let&apos;s Talk
                   <br />
                   About Your
@@ -49,7 +49,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── FORM + INFO ── */}
-      <section className="relative overflow-hidden bg-black px-6 pb-32 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 pb-20 sm:px-6 md:pb-32 lg:px-8">
         {/* Blueprint grid */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.025]">
           <svg width="100%" height="100%">
@@ -73,11 +73,11 @@ export default function ContactPage() {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Form — 7 cols */}
           <div className="lg:col-span-7">
             <AnimateOnScroll animation="fade-left">
-              <div className="border border-white/5 bg-charcoal p-8 md:p-10">
+              <div className="border border-white/5 bg-charcoal p-5 sm:p-8 md:p-10">
                 {/* Form header */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3">

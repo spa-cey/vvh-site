@@ -59,9 +59,9 @@ export function Footer() {
       </div>
 
       {/* Main footer — big brand moment + columns */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-20 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pt-12 sm:px-6 sm:pt-20 lg:px-8">
         {/* Big brand typography row */}
-        <div className="mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+        <div className="mb-10 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:gap-8 lg:flex-row lg:items-end">
           <div>
             <Link href="/" className="group inline-flex items-center gap-4">
               <Image
@@ -87,7 +87,7 @@ export function Footer() {
           </div>
 
           {/* Back to top + socials */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <div className="flex gap-3">
               <a
                 href="#"
@@ -122,7 +122,7 @@ export function Footer() {
         </div>
 
         {/* Link columns */}
-        <div className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 py-12 sm:gap-12 sm:py-16 lg:grid-cols-4">
           {/* Services */}
           <div>
             <h3 className="flex items-center gap-3 font-display text-lg tracking-wider text-white">

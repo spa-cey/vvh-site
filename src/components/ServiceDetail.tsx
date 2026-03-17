@@ -52,7 +52,7 @@ export function ServiceDetail({
   return (
     <section
       id={id}
-      className="group/section relative scroll-mt-24 border-b border-white/5 px-6 py-24 lg:px-8"
+      className="group/section relative scroll-mt-24 border-b border-white/5 px-5 py-16 sm:px-6 sm:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div
@@ -106,7 +106,7 @@ export function ServiceDetail({
                   </span>
                 </div>
 
-                <h2 className="mt-6 font-display text-4xl leading-[0.95] tracking-wide text-white md:text-5xl">
+                <h2 className="mt-6 font-display text-3xl leading-[0.95] tracking-wide text-white sm:text-4xl md:text-5xl">
                   {title}
                 </h2>
                 <div className="mt-4 h-0.5 w-12 bg-red" />

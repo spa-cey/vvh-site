@@ -19,11 +19,11 @@ export function CTASection() {
         </svg>
       </div>
 
-      <div className="relative z-20 px-6 pb-32 pt-40 lg:px-8">
+      <div className="relative z-20 px-5 pb-20 pt-28 sm:px-6 md:pb-32 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-7xl">
           {/* Full-width red block with dramatic typography */}
           <AnimateOnScroll animation="scale">
-            <div className="relative overflow-hidden bg-red p-12 md:p-20">
+            <div className="relative overflow-hidden bg-red p-8 sm:p-12 md:p-20">
               {/* Noise texture */}
               <div
                 className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
@@ -43,7 +43,7 @@ export function CTASection() {
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
                     Start Your Project
                   </p>
-                  <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+                  <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                     Ready to
                     <br />
                     Build?

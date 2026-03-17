@@ -166,7 +166,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="group mt-4 flex w-full items-center justify-center gap-3 bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-red-bright hover:gap-4 disabled:cursor-not-allowed disabled:opacity-50"
+        className="group mt-4 flex w-full items-center justify-center gap-3 bg-red px-6 py-3.5 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-red-bright hover:gap-4 disabled:cursor-not-allowed disabled:opacity-50 sm:px-8 sm:py-4"
       >
         {pending ? (
           <>

@@ -98,14 +98,14 @@ export function PortfolioGrid() {
   return (
     <>
       {/* Filter bar */}
-      <section className="bg-black px-6 pb-12 lg:px-8">
+      <section className="bg-black px-5 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap gap-2">
+          <div className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-x-visible sm:px-0 sm:pb-0">
             {FILTERS.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActive(filter)}
-                className={`group flex items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                className={`group flex shrink-0 items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
                   active === filter
                     ? "bg-red text-white"
                     : "border border-white/10 text-gray-500 hover:border-red/30 hover:text-white"
@@ -127,7 +127,7 @@ export function PortfolioGrid() {
       </section>
 
       {/* Masonry grid */}
-      <section className="bg-black px-6 pb-32 lg:px-8">
+      <section className="bg-black px-5 pb-20 sm:px-6 md:pb-32 lg:px-8">
         <div className="mx-auto max-w-7xl columns-1 gap-5 sm:columns-2 lg:columns-3">
           {filtered.map((project) => (
               <div key={project.id} className="group mb-5 break-inside-avoid overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">

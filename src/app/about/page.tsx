@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <>
       {/* ── HERO — editorial spread ── */}
-      <section className="relative overflow-hidden bg-black px-6 pt-36 pb-0 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 pt-28 pb-0 sm:px-6 sm:pt-36 lg:px-8">
         {/* Giant background text */}
         <div className="pointer-events-none absolute -right-8 top-20 select-none font-display text-[16rem] leading-none tracking-wide text-white/[0.015] md:text-[24rem]">
           ABOUT
@@ -29,7 +29,7 @@ export default function AboutPage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                   Who We Are
                 </p>
-                <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+                <h1 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                   Built by
                   <br />
                   Builders.
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── FOUNDERS — editorial cards ── */}
-      <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         {/* Background number */}
         <div className="pointer-events-none absolute -left-4 top-16 select-none font-display text-[18rem] leading-none tracking-wide text-white/[0.015] md:text-[24rem]">
           01
@@ -116,7 +116,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 Our Leadership
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+              <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                 The Team
                 <br />
                 Behind VVH
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── OUR STORY — asymmetric split ── */}
-      <section className="relative overflow-hidden bg-charcoal px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-charcoal px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         {/* Crosshatch texture */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.025]">
           <svg width="100%" height="100%">
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                   Our Story
                 </p>
-                <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+                <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                   From the
                   <br />
                   Ground Up
@@ -253,7 +253,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── WHAT WE DO — staggered cards ── */}
-      <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="pointer-events-none absolute -right-4 top-1/2 -translate-y-1/2 select-none font-display text-[14rem] leading-none tracking-wide text-white/[0.015] md:text-[20rem]">
           02
         </div>
@@ -264,7 +264,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 What We Do
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+              <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                 Our Expertise
               </h2>
             </AnimateOnScroll>
@@ -329,7 +329,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CORE VALUES — full-width list ── */}
-      <section className="relative overflow-hidden border-t border-white/5 bg-charcoal px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden border-t border-white/5 bg-charcoal px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
           <svg width="100%" height="100%">
             <defs>
@@ -347,7 +347,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 How We Operate
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+              <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                 Core Values
               </h2>
               <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-red to-transparent" />
@@ -373,10 +373,10 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <AnimateOnScroll animation="scale">
-            <div className="relative overflow-hidden bg-red p-12 md:p-20">
+            <div className="relative overflow-hidden bg-red p-8 sm:p-12 md:p-20">
               {/* Noise */}
               <div
                 className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
@@ -393,7 +393,7 @@ export default function AboutPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
                     Start Your Project
                   </p>
-                  <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+                  <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                     Let&apos;s Build
                     <br />
                     Together

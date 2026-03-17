@@ -11,7 +11,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden bg-black px-6 pt-36 pb-20 lg:px-8">
+      <section className="relative overflow-hidden bg-black px-5 pt-28 pb-14 sm:px-6 sm:pt-36 sm:pb-20 lg:px-8">
         <div className="pointer-events-none absolute -right-4 top-12 select-none font-display text-[12rem] leading-none tracking-wide text-white/[0.015] md:text-[20rem]">
           WORK
         </div>
@@ -22,7 +22,7 @@ export default function PortfolioPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 Our Work
               </p>
-              <h1 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+              <h1 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                 See What
                 <br />
                 We&apos;ve Built

@@ -65,12 +65,12 @@ export function AboutPreview() {
         01
       </div>
 
-      <div className="relative z-20 mx-auto max-w-7xl px-6 pb-32 pt-40 lg:px-8">
+      <div className="relative z-20 mx-auto max-w-7xl px-5 pb-20 pt-28 sm:px-6 md:pb-32 md:pt-40 lg:px-8">
         {/* Stats marquee bar */}
         <AnimateOnScroll animation="fade-up">
-          <div className="mb-20 overflow-hidden border-y border-white/10 py-5">
+          <div className="mb-12 overflow-hidden border-y border-white/10 py-4 sm:mb-20 sm:py-5">
             <div
-              className="flex gap-16 whitespace-nowrap"
+              className="flex gap-8 whitespace-nowrap sm:gap-16"
               style={{
                 animation: "marquee-scroll 25s linear infinite",
               }}
@@ -105,14 +105,14 @@ export function AboutPreview() {
         </AnimateOnScroll>
 
         {/* Main content — asymmetric layout */}
-        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="grid items-start gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left column — text, offset up */}
           <div className="lg:col-span-5 lg:-mt-4">
             <AnimateOnScroll animation="fade-left">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 About Us
               </p>
-              <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl lg:text-7xl">
+              <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                 Built on
                 <br />
                 Integrity.

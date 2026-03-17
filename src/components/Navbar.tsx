@@ -39,14 +39,14 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-6 sm:py-4 lg:px-8">
         <Link href="/" className="relative z-50 flex items-center gap-3">
           <Image
             src="/logo-transparent.png"
             alt="VVH Construction Group"
             width={160}
             height={48}
-            className="h-12 w-auto md:h-14"
+            className="h-10 w-auto sm:h-12 md:h-14"
                         priority
           />
         </Link>
@@ -101,13 +101,13 @@ export function Navbar() {
             : "opacity-0 pointer-events-none"
         )}
       >
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-6 sm:gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "font-display text-4xl tracking-wider transition-colors duration-200",
+                "font-display text-3xl tracking-wider transition-colors duration-200 sm:text-4xl",
                 pathname === link.href
                   ? "text-red"
                   : "text-white hover:text-red"

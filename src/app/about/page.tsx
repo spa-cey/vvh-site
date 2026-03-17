@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Users, Target, Hammer, TrendingUp, ArrowRight } from "lucide-react";
-import { COMPANY, FOUNDERS, STATS, CORE_VALUES } from "@/lib/constants";
+import { Users, Target, Hammer, TrendingUp, ArrowRight, HardHat, ClipboardList, Monitor } from "lucide-react";
+import { COMPANY, FOUNDERS, PROOF_ITEMS, CORE_VALUES } from "@/lib/constants";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "VVH Construction Group was founded by three driven entrepreneurs from Jersey City with over a decade of experience in residential and commercial construction.",
+    "VVH Construction Group is a full-service construction company specializing in residential renovations, commercial buildouts, property restoration, and ground-up construction.",
 };
 
 export default function AboutPage() {
@@ -30,24 +30,24 @@ export default function AboutPage() {
                   Who We Are
                 </p>
                 <h1 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  Built by
+                  Built in the Field.
                   <br />
-                  Builders.
-                  <br />
-                  <span className="text-red">Not Businessmen.</span>
+                  <span className="text-red">Delivered with Precision.</span>
                 </h1>
                 <div className="mt-6 h-px w-24 bg-gradient-to-r from-red to-transparent" />
                 <p className="mt-6 text-base leading-relaxed text-gray-400">
-                  VVH Construction Group was founded by three guys from Jersey City
-                  who grew up on job sites. We didn&apos;t come from corner offices
-                  &mdash; we came from the field. That&apos;s what makes us
-                  different.
+                  VVH Construction Group was founded by professionals with real
+                  job-site experience and deep roots in the trades. We
+                  didn&apos;t come from boardrooms, we came from the field,
+                  where execution, accountability, and attention to detail
+                  matter every day.
                 </p>
-                <p className="mt-4 text-base leading-relaxed text-gray-400">
-                  From high-rise towers and commercial buildouts to full-home
-                  renovations and exterior restoration, VVH handles projects of
-                  every scale with the same principle: treat every job like
-                  it&apos;s our own.
+                <div className="mt-6 h-px w-full bg-white/5" />
+                <p className="mt-6 text-base leading-relaxed text-gray-400">
+                  From commercial buildouts and exterior restoration to
+                  residential renovations and larger-scale construction, we
+                  approach every project with the same standard: clear
+                  communication, disciplined execution, and pride in the work.
                 </p>
               </AnimateOnScroll>
             </div>
@@ -84,34 +84,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── STATS — scrolling ticker ── */}
-      <section className="overflow-hidden border-y border-white/5 bg-charcoal py-6">
-        <div
-          className="flex gap-16 whitespace-nowrap"
-          style={{ animation: "marquee-scroll 25s linear infinite" }}
-        >
-          {[...STATS, ...STATS, ...STATS].map((stat, i) => (
-            <div key={i} className="flex items-baseline gap-3">
-              <span className="font-display text-4xl tracking-wide text-red md:text-5xl">
-                {stat.value}
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
-                {stat.label}
-              </span>
-            </div>
+      {/* ── PROOF BAR ── */}
+      <section className="border-y border-white/5 bg-charcoal py-6">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 sm:gap-x-12">
+          {PROOF_ITEMS.map((item) => (
+            <span
+              key={item}
+              className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 sm:text-sm"
+            >
+              {item}
+            </span>
           ))}
         </div>
       </section>
 
-      {/* ── FOUNDERS — editorial cards ── */}
-      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
-        {/* Background number */}
-        <div className="pointer-events-none absolute -left-4 top-16 select-none font-display text-[18rem] leading-none tracking-wide text-white/[0.015] md:text-[24rem]">
-          01
-        </div>
-
+      {/* ── FOUNDERS ── */}
+      <section className="relative overflow-hidden bg-black px-5 py-16 sm:px-6 md:py-24 lg:px-8">
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-20 max-w-xl">
+          <div className="mb-12 max-w-xl sm:mb-16">
             <AnimateOnScroll animation="fade-up">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
                 Our Leadership
@@ -122,44 +112,44 @@ export default function AboutPage() {
                 Behind VVH
               </h2>
               <div className="mt-5 h-px w-32 bg-gradient-to-r from-red to-transparent" />
+              <p className="mt-5 text-base leading-relaxed text-gray-300">
+                Built by people with real field experience and a hands-on
+                approach to execution.
+              </p>
             </AnimateOnScroll>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {FOUNDERS.map((founder, i) => (
-              <AnimateOnScroll key={founder.name} delay={i * 150}>
-                <div className="group relative overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
-                  {/* Hover fill */}
-                  <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.04] transition-transform duration-500 group-hover:scale-y-100" />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {FOUNDERS.map((founder, i) => {
+              const iconMap: Record<string, typeof HardHat> = { HardHat, Target, ClipboardList, Monitor };
+              const Icon = iconMap[founder.icon] || Users;
+              return (
+                <AnimateOnScroll key={founder.name} delay={i * 100}>
+                  <div className="group relative overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
+                    <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.04] transition-transform duration-500 group-hover:scale-y-100" />
 
-                  <div className="relative p-8">
-                    {/* Number + avatar */}
-                    <div className="flex items-start justify-between">
-                      <span className="font-display text-6xl leading-none text-white/[0.06]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="flex h-14 w-14 items-center justify-center border border-white/10 bg-black">
-                        <Users className="h-6 w-6 text-red" />
+                    <div className="relative p-6">
+                      <div className="flex h-12 w-12 items-center justify-center border border-white/10 bg-black">
+                        <Icon className="h-5 w-5 text-red" />
                       </div>
+
+                      <h3 className="mt-5 font-display text-2xl tracking-wider text-white">
+                        {founder.name}
+                      </h3>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-red">
+                        {founder.role}
+                      </p>
+
+                      <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
+
+                      <p className="mt-4 text-sm leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-gray-200">
+                        {founder.bio}
+                      </p>
                     </div>
-
-                    <h3 className="mt-8 font-display text-3xl tracking-wider text-white">
-                      {founder.name}
-                    </h3>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-red">
-                      {founder.role}
-                    </p>
-
-                    {/* Red line that grows on hover */}
-                    <div className="mt-4 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
-
-                    <p className="mt-5 text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
-                      {founder.bio}
-                    </p>
                   </div>
-                </div>
-              </AnimateOnScroll>
-            ))}
+                </AnimateOnScroll>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -206,7 +196,7 @@ export default function AboutPage() {
                       &ldquo;Construction doesn&apos;t have to be this hard for the client.&rdquo;
                     </p>
                     <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                      — The Founding Moment
+                      The Founding Moment
                     </p>
                   </div>
                 </div>
@@ -229,8 +219,8 @@ export default function AboutPage() {
                 <p className="mt-8 text-base leading-relaxed text-gray-400">
                   Varun, Vishal, and Humza didn&apos;t meet in a boardroom. They
                   met on job sites across Jersey City and the greater
-                  Tri-State area, working their way up through the trades
-                  &mdash; framing, concrete, electrical, project management.
+                  Tri-State area, working their way up through the trades:
+                  framing, concrete, electrical, project management.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-gray-400">
                   After years of watching projects get mismanaged by companies
@@ -400,7 +390,7 @@ export default function AboutPage() {
                   </h2>
                   <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
                     Whether it&apos;s a ground-up build, a renovation, or a
-                    conversation about what&apos;s possible &mdash; we&apos;re ready.
+                    conversation about what&apos;s possible, we&apos;re ready.
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:text-right">

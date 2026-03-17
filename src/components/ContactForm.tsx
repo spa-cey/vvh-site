@@ -132,7 +132,7 @@ export function ContactForm() {
           required
           rows={5}
           className="mt-2 w-full resize-none border-b border-l-0 border-r-0 border-t-0 border-white/10 bg-transparent px-0 py-3 text-white placeholder:text-gray-700 transition-colors duration-200 focus:border-red focus:outline-none"
-          placeholder="Tell us about your project — scope, timeline, budget, anything relevant..."
+          placeholder="Tell us about your project: scope, timeline, budget, anything relevant..."
         />
       </div>
 

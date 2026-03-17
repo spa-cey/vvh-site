@@ -46,11 +46,19 @@ export function Navbar() {
           <Image
             src="/logo-transparent.png"
             alt="VVH Construction Group"
-            width={160}
-            height={48}
+            width={200}
+            height={60}
             className="h-10 w-auto sm:h-12 md:h-14"
-                        priority
+            priority
           />
+          <div>
+            <span className="font-display text-lg tracking-wide text-white sm:text-xl md:text-2xl">
+              VVH
+            </span>
+            <span className="block text-[8px] font-semibold uppercase tracking-[0.2em] text-gray-400 sm:text-[9px] md:text-[10px]">
+              Construction Group
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -76,7 +84,7 @@ export function Navbar() {
             href="/contact"
             className="bg-red px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-white transition-colors duration-200 hover:bg-red-bright"
           >
-            Get a Quote
+            Request a Quote
           </Link>
         </div>
 
@@ -122,7 +130,7 @@ export function Navbar() {
             href="/contact"
             className="mt-4 bg-red px-8 py-3 text-lg font-semibold uppercase tracking-wider text-white transition-colors duration-200 hover:bg-red-bright"
           >
-            Get a Quote
+            Request a Quote
           </Link>
         </div>
       </div>

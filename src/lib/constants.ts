@@ -1,18 +1,18 @@
 export const COMPANY = {
   name: "VVH Construction Group",
   legal: "VVH Construction Group, LLC",
-  slogan: "Building What's Next.",
+  slogan: "Built with Vision. Executed with Precision.",
   email: "info@vvh.group",
   phone: "(908) 555-0199",
-  area: "Northeast US",
-  hours: "Monday\u2013Saturday, 7:00 AM \u2013 6:00 PM",
+  area: "NJ, NY & PA",
+  hours: "Monday to Saturday, 7:00 AM to 6:00 PM",
 } as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Projects", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -20,27 +20,34 @@ export const FOUNDERS = [
   {
     name: "Varun Kumar",
     role: "Principal / Co-Founder",
-    bio: "Varun brings over a decade of hands-on experience in large-scale commercial construction across the Northeast. From high-rise residential towers in Jersey City to mixed-use developments in Manhattan, he has managed projects exceeding $50M in value. His background in structural engineering and field operations gives VVH its technical edge. Varun oversees all project execution, subcontractor relationships, and quality control.",
+    icon: "HardHat" as const,
+    bio: "Varun brings hands-on experience in large-scale commercial construction and field operations across the Northeast. He oversees project execution, subcontractor coordination, and quality control with a strong focus on disciplined delivery.",
   },
   {
     name: "Vishal Kumar",
     role: "Principal / Co-Founder",
-    bio: "Vishal\u2019s career in construction began on the ground floor \u2014 literally. Starting as a laborer at 18, he worked his way through every trade before transitioning to project management and business development. His deep understanding of the craft, combined with a sharp eye for opportunity, drives VVH\u2019s growth strategy. Vishal leads client relationships, estimating, and pre-construction planning.",
+    icon: "Target" as const,
+    bio: "Vishal brings practical construction experience across the trades, project management, and pre-construction planning. He leads estimating, client communication, and business development with a focus on building well-scoped, well-managed projects.",
   },
   {
     name: "Humza Ahmed",
     role: "Principal / Co-Founder",
-    bio: "Humza is the operational backbone of VVH. With experience spanning residential renovations, commercial buildouts, and exterior restoration services, he ensures every project runs on time and on budget. His background in construction management and logistics keeps VVH\u2019s crews coordinated across multiple active job sites. Humza oversees scheduling, procurement, and safety compliance.",
+    icon: "ClipboardList" as const,
+    bio: "Humza drives the operational side of VVH, coordinating scheduling, procurement, and project flow across residential and commercial work. With a hands-on approach and strong oversight of day-to-day execution, he helps ensure projects stay organized, efficient, and on track.",
+  },
+  {
+    name: "Sanaan Mazhar",
+    role: "Technology & Systems",
+    icon: "Monitor" as const,
+    bio: "Sanaan manages the technology and backend systems that support VVH's operations. From digital infrastructure and workflow support to platform management and technical coordination, he helps build the systems behind the company's execution and growth.",
   },
 ] as const;
 
-export const STATS = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "200+", label: "Projects Completed" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "$50M+", label: "Total Project Value" },
-  { value: "0", label: "Safety Violations" },
-  { value: "3", label: "States Served" },
+export const PROOF_ITEMS = [
+  "Licensed & Insured",
+  "NJ, NY & PA",
+  "Residential & Commercial",
+  "Est. 2016",
 ] as const;
 
 export const CORE_VALUES = [
@@ -56,94 +63,94 @@ export const CORE_VALUES = [
 
 export const SERVICES = [
   {
-    id: "residential",
-    title: "Residential Construction",
-    icon: "Home" as const,
-    summary:
-      "Full-service home construction, from renovations and additions to complete new builds. We work with homeowners to bring their vision to life.",
-    description:
-      "Full-service home construction, from renovations and additions to complete new builds. We work with homeowners to bring their vision to life \u2014 on time and on budget. Whether you\u2019re building your dream home from the ground up or adding an extension to your current property, our team manages every detail from permits and planning through final walkthrough.",
-  },
-  {
     id: "commercial",
     title: "Commercial Construction",
     icon: "Building2" as const,
     summary:
-      "Retail buildouts, office renovations, and ground-up commercial projects. We manage every phase from pre-construction through delivery.",
+      "Commercial buildouts, office renovations, and tenant improvements managed with professional coordination from pre-construction through completion.",
     description:
-      "Retail buildouts, office renovations, and ground-up commercial projects. We manage every phase from pre-construction planning through final delivery. Our commercial team understands the unique demands of business construction \u2014 tight timelines, regulatory compliance, and the need to minimize disruption to your operations.",
+      "Commercial buildouts, office renovations, and tenant improvements managed with professional coordination from pre-construction through completion. Our commercial team understands the unique demands of business construction: tight timelines, regulatory compliance, and the need to minimize disruption to your operations.",
   },
   {
-    id: "renovations",
-    title: "Renovations & Remodeling",
+    id: "residential",
+    title: "Residential Renovations",
     icon: "Hammer" as const,
     summary:
-      "Kitchens, bathrooms, basements, and full-home renovations. We modernize spaces with quality materials and expert craftsmanship.",
+      "Kitchen, bathroom, basement, and full-home renovation services delivered with quality workmanship, clear timelines, and attention to detail.",
     description:
-      "Kitchens, bathrooms, basements, and full-home renovations. We modernize and upgrade existing spaces with quality materials and expert craftsmanship. From a single bathroom refresh to a complete whole-home transformation, we handle demolition, structural changes, finishes, and everything in between.",
+      "Kitchen, bathroom, basement, and full-home renovation services delivered with quality workmanship, clear timelines, and attention to detail. From a single bathroom refresh to a complete whole-home transformation, we handle demolition, structural changes, finishes, and everything in between.",
+  },
+  {
+    id: "ground-up",
+    title: "Ground-Up Construction",
+    icon: "HardHat" as const,
+    summary:
+      "From site preparation to final delivery, we manage new construction projects with a focus on planning, scheduling, and execution.",
+    description:
+      "From site preparation to final delivery, we manage new construction projects with a focus on planning, scheduling, and execution. Whether you are building a new home or developing a commercial property, our team manages every detail from permits and planning through final walkthrough.",
   },
   {
     id: "exterior",
-    title: "Exterior Services & Powerwashing",
-    icon: "Droplets" as const,
+    title: "Exterior Restoration",
+    icon: "Home" as const,
     summary:
-      "Professional exterior restoration including powerwashing, deck work, siding, and curb appeal upgrades.",
+      "Siding, facade improvements, deck work, exterior repairs, and property upgrades that improve appearance, durability, and long-term value.",
     description:
-      "Professional exterior restoration including powerwashing, deck and patio work, siding, and curb appeal upgrades. The perfect complement to any construction or renovation project. We restore and protect your property\u2019s exterior surfaces, making them look brand new while extending their lifespan.",
+      "Siding, facade improvements, deck work, exterior repairs, and property upgrades that improve appearance, durability, and long-term value. We restore and protect your property\u2019s exterior surfaces, improving curb appeal while extending their lifespan.",
   },
   {
     id: "roofing",
-    title: "Roofing & Structural Work",
-    icon: "HardHat" as const,
+    title: "Roofing Services",
+    icon: "Droplets" as const,
     summary:
-      "Roof repairs, replacements, and structural improvements. We ensure your property is protected and built to code.",
+      "Roof repair, replacement, and maintenance solutions designed to protect your property and keep projects code-compliant and weather-ready.",
     description:
-      "Roof repairs, replacements, and structural improvements. We ensure your property is protected and built to code. From emergency leak repairs to complete roof replacements and structural reinforcement, our team delivers reliable work that stands up to demanding Northeast weather conditions.",
+      "Roof repair, replacement, and maintenance solutions designed to protect your property and keep projects code-compliant and weather-ready. From emergency leak repairs to complete roof replacements, our team delivers reliable work that stands up to demanding weather conditions.",
   },
   {
     id: "management",
-    title: "Project Management & General Contracting",
+    title: "General Contracting & Project Management",
     icon: "ClipboardList" as const,
     summary:
-      "End-to-end project coordination including scheduling, budgeting, subcontractor management, and quality control.",
+      "End-to-end coordination including budgeting, scheduling, subcontractor management, and on-site oversight to keep projects moving efficiently.",
     description:
-      "End-to-end project coordination including scheduling, budgeting, subcontractor management, and quality control. We keep your project on track so you don\u2019t have to. Our project managers serve as your single point of contact, coordinating all trades and ensuring every phase hits its deadline.",
+      "End-to-end coordination including budgeting, scheduling, subcontractor management, and on-site oversight to keep projects moving efficiently. Our project managers serve as your single point of contact, coordinating all trades and ensuring every phase hits its deadline.",
   },
 ] as const;
 
 export const VALUE_PROPS = [
   {
-    title: "Transparent Pricing",
+    title: "Clear Scopes & Pricing",
     icon: "DollarSign" as const,
     description:
-      "No hidden fees. No surprise change orders. You know exactly what you\u2019re paying for before we start.",
+      "We provide straightforward proposals, defined scopes, and honest pricing so you understand the work before the project begins.",
   },
   {
-    title: "On-Time Delivery",
+    title: "Reliable Project Execution",
     icon: "Clock" as const,
     description:
-      "We set realistic timelines and hit them. Your project stays on schedule from day one.",
+      "From planning to completion, we keep projects moving with disciplined scheduling, proactive coordination, and consistent communication.",
   },
   {
-    title: "Quality Craftsmanship",
+    title: "Quality Without Shortcuts",
     icon: "Award" as const,
     description:
-      "Every detail matters. We hold ourselves to the highest standards on every project, big or small.",
+      "We hold our work to a high standard and focus on details that affect durability, appearance, and long-term performance.",
   },
   {
     title: "Licensed & Insured",
     icon: "ShieldCheck" as const,
     description:
-      "Fully licensed and insured for your protection. We operate by the book so you can build with confidence.",
+      "VVH operates professionally, responsibly, and in compliance, giving clients confidence throughout the build process.",
   },
 ] as const;
 
 export const PROJECT_TYPES = [
-  "Residential",
-  "Commercial",
-  "Renovation",
-  "Exterior / Powerwashing",
+  "Commercial Construction",
+  "Residential Renovation",
+  "Ground-Up Construction",
+  "Exterior Restoration",
   "Roofing",
-  "Project Management",
+  "General Contracting",
   "Other",
 ] as const;

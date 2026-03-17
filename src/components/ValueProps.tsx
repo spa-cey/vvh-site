@@ -53,11 +53,6 @@ export function ValueProps() {
         </svg>
       </div>
 
-      {/* Giant decorative text */}
-      <div className="pointer-events-none absolute -right-4 top-1/2 -translate-y-1/2 select-none font-display text-[12rem] leading-none tracking-wide text-white/[0.015] md:text-[18rem]">
-        03
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Asymmetric header */}
         <div className="mb-12 max-w-2xl sm:mb-20">
@@ -78,12 +73,10 @@ export function ValueProps() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALUE_PROPS.map((prop, i) => {
             const Icon = iconMap[prop.icon];
-            // Alternate cards shift down for stagger effect
-            const offsetClass = i % 2 === 1 ? "lg:mt-12" : "";
             return (
               <AnimateOnScroll key={prop.title} delay={i * 120}>
                 <div
-                  className={`group relative overflow-hidden border border-white/5 bg-charcoal p-8 transition-all duration-500 hover:border-red/30 ${offsetClass}`}
+                  className="group relative overflow-hidden border border-white/5 bg-charcoal p-8 transition-all duration-500 hover:border-red/30"
                 >
                   {/* Hover fill effect */}
                   <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.06] transition-transform duration-500 group-hover:scale-y-100" />

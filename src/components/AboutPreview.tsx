@@ -2,48 +2,7 @@
 
 import Image from "next/image";
 import { AnimateOnScroll } from "./AnimateOnScroll";
-import { useEffect, useRef, useState } from "react";
-
-function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const duration = 2000;
-          const steps = 60;
-          const increment = target / steps;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
-          }, duration / steps);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [target]);
-
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
-}
+import { PROOF_ITEMS } from "@/lib/constants";
 
 export function AboutPreview() {
   return (
@@ -60,53 +19,26 @@ export function AboutPreview() {
         </svg>
       </div>
 
-      {/* Giant section number — decorative */}
-      <div className="pointer-events-none absolute -right-8 top-12 select-none font-display text-[20rem] leading-none tracking-wide text-white/[0.02] md:text-[28rem]">
-        01
-      </div>
-
       <div className="relative z-20 mx-auto max-w-7xl px-5 pb-20 pt-28 sm:px-6 md:pb-32 md:pt-40 lg:px-8">
-        {/* Stats marquee bar */}
+        {/* Proof bar */}
         <AnimateOnScroll animation="fade-up">
-          <div className="mb-12 overflow-hidden border-y border-white/10 py-4 sm:mb-20 sm:py-5">
-            <div
-              className="flex gap-8 whitespace-nowrap sm:gap-16"
-              style={{
-                animation: "marquee-scroll 25s linear infinite",
-              }}
-            >
-              {[
-                { val: 10, suf: "+", label: "Years Experience" },
-                { val: 200, suf: "+", label: "Projects Delivered" },
-                { val: 98, suf: "%", label: "Client Satisfaction" },
-                { val: 50, suf: "M+", label: "Project Value" },
-                { val: 0, suf: "", label: "Safety Violations" },
-                { val: 3, suf: "", label: "States Served" },
-                // Duplicate for seamless loop
-                { val: 10, suf: "+", label: "Years Experience" },
-                { val: 200, suf: "+", label: "Projects Delivered" },
-                { val: 98, suf: "%", label: "Client Satisfaction" },
-                { val: 50, suf: "M+", label: "Project Value" },
-                { val: 0, suf: "", label: "Safety Violations" },
-                { val: 3, suf: "", label: "States Served" },
-              ].map((stat, i) => (
-                <div key={i} className="flex items-baseline gap-3">
-                  <span className="font-display text-4xl tracking-wide text-red md:text-5xl">
-                    {stat.val === 50 ? "$" : ""}
-                    <Counter target={stat.val} suffix={stat.suf} />
-                  </span>
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
-                    {stat.label}
-                  </span>
-                </div>
+          <div className="mb-12 border-y border-white/10 py-5 sm:mb-20">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-12">
+              {PROOF_ITEMS.map((item) => (
+                <span
+                  key={item}
+                  className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 sm:text-sm"
+                >
+                  {item}
+                </span>
               ))}
             </div>
           </div>
         </AnimateOnScroll>
 
-        {/* Main content — asymmetric layout */}
+        {/* Main content */}
         <div className="grid items-start gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Left column — text, offset up */}
+          {/* Left column */}
           <div className="lg:col-span-5 lg:-mt-4">
             <AnimateOnScroll animation="fade-left">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
@@ -125,19 +57,20 @@ export function AboutPreview() {
             <AnimateOnScroll animation="fade-left" delay={200}>
               <p className="mt-8 text-base leading-relaxed text-gray-400">
                 VVH Construction Group is a full-service construction company
-                specializing in residential and commercial projects. We handle
-                everything from home renovations and exterior restoration to
-                large-scale builds and new construction.
+                specializing in residential renovations, commercial buildouts,
+                property restoration, and ground-up construction. With roots in
+                the trades and a hands-on approach to project leadership, we
+                focus on disciplined execution, clear communication, and work
+                that holds up.
               </p>
               <p className="mt-4 text-base leading-relaxed text-gray-400">
-                Founded by a team of driven entrepreneurs with deep roots in the
-                trades, VVH was built on a simple principle: deliver exceptional
-                work, communicate honestly, and treat every project like
-                it&apos;s our own.
+                From smaller renovation work to larger-scale construction, our
+                standard stays the same: no shortcuts, no confusion, and no
+                compromise on the work.
               </p>
             </AnimateOnScroll>
 
-            {/* Core values — stacked chips */}
+            {/* Core values chips */}
             <AnimateOnScroll animation="fade-up" delay={400}>
               <div className="mt-10 flex flex-wrap gap-2">
                 {[
@@ -157,7 +90,7 @@ export function AboutPreview() {
             </AnimateOnScroll>
           </div>
 
-          {/* Right column — stacked images with offset */}
+          {/* Right column — images */}
           <div className="relative lg:col-span-7">
             <AnimateOnScroll animation="fade-right" delay={100}>
               <div className="relative">
@@ -181,7 +114,7 @@ export function AboutPreview() {
                   <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-red" />
                 </div>
 
-                {/* Floating secondary image — overlapping */}
+                {/* Floating secondary image */}
                 <div className="absolute -bottom-12 -left-6 hidden aspect-square w-48 overflow-hidden border-4 border-black shadow-2xl lg:block">
                   <Image
                     src="/images/hero-bg.jpg"
@@ -192,13 +125,13 @@ export function AboutPreview() {
                   />
                 </div>
 
-                {/* Quote block — overlapping right */}
+                {/* Quote block */}
                 <div className="absolute -bottom-8 right-0 hidden max-w-xs bg-red p-6 lg:block">
                   <p className="font-display text-lg leading-snug tracking-wide text-white">
                     &ldquo;Treat every project like it&apos;s our own.&rdquo;
                   </p>
                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                    — VVH Founding Principle
+                    VVH Founding Principle
                   </p>
                 </div>
               </div>

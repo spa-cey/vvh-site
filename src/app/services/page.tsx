@@ -131,7 +131,7 @@ export default function ServicesPage() {
                     href="/contact"
                     className="group inline-flex items-center gap-3 bg-white px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-red transition-all duration-300 hover:gap-5 hover:bg-black hover:text-white"
                   >
-                    Free Estimate
+                    Request a Quote
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <p className="mt-4 text-xs uppercase tracking-[0.15em] text-white/40">

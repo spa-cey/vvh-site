@@ -28,28 +28,20 @@ export function Hero() {
       {/* Bottom gradient fade */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
 
-      {/* Diagonal red accent */}
-      <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-red to-transparent opacity-40" />
-      <div className="absolute right-[15%] top-0 h-[120%] w-px -rotate-12 bg-gradient-to-b from-transparent via-red/20 to-transparent" />
-
       <div className="relative z-10 max-w-4xl">
-        {/* Tagline */}
-        <p className="mb-6 text-sm font-semibold uppercase tracking-[0.3em] text-red">
-          Building What&apos;s Next.
-        </p>
-
         {/* Main heading */}
         <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-7xl lg:text-8xl">
-          The Next Generation
+          Built with Vision.
           <br />
-          <span className="text-red">of Construction</span>
+          <span className="text-red">Executed with Precision.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 sm:mt-6 sm:text-lg md:text-xl">
-          Residential and commercial construction services built on quality,
-          transparency, and results. From renovations to ground-up builds — we
-          bring your project to life.
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl">
+          VVH Construction Group delivers residential construction, commercial
+          buildouts, property restoration, and ground-up construction with
+          principal oversight and disciplined execution founded on trust and
+          transparency.
         </p>
 
         {/* CTAs */}
@@ -58,13 +50,13 @@ export function Hero() {
             href="/contact"
             className="w-full bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition-colors duration-200 hover:bg-red-bright sm:w-auto"
           >
-            Get a Free Estimate
+            Request a Quote
           </Link>
           <Link
             href="/portfolio"
             className="w-full border border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-200 hover:border-white/50 hover:bg-white/5 sm:w-auto"
           >
-            View Our Work
+            View Projects
           </Link>
         </div>
       </div>

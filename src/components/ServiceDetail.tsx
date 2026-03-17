@@ -21,9 +21,9 @@ const iconMap = {
 } as const;
 
 const imageMap: Record<string, string> = {
-  residential: "/images/service-residential.jpg",
   commercial: "/images/service-commercial.jpg",
-  renovations: "/images/service-renovation.jpg",
+  residential: "/images/service-renovation.jpg",
+  "ground-up": "/images/service-residential.jpg",
   exterior: "/images/service-exterior.jpg",
   roofing: "/images/service-roofing.jpg",
   management: "/images/service-management.jpg",

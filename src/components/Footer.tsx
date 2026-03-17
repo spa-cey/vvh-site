@@ -81,8 +81,8 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
-              Full-service construction company delivering premium residential
-              and commercial projects across the Northeast.
+              Full-service construction company delivering residential and
+              commercial projects across NJ, NY, and PA.
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-sm text-gray-500 transition-colors duration-200 hover:text-white"
                 >
                   <span className="h-px w-0 bg-red transition-all duration-300 group-hover:w-3" />
-                  Free Estimate
+                  Request a Quote
                 </Link>
               </li>
             </ul>
@@ -249,8 +249,8 @@ export function Footer() {
               Get Started
             </h3>
             <p className="mt-6 text-sm leading-relaxed text-gray-500">
-              Ready to start your next project? Get a free, no-obligation
-              estimate from our team.
+              Ready to start your next project? Get a no-obligation quote
+              from our team.
             </p>
             <Link
               href="/contact"

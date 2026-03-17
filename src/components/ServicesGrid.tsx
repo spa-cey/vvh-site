@@ -25,9 +25,9 @@ const iconMap = {
 } as const;
 
 const serviceImages = [
-  "/images/service-residential.jpg",
   "/images/service-commercial.jpg",
   "/images/service-renovation.jpg",
+  "/images/service-residential.jpg",
   "/images/service-exterior.jpg",
   "/images/service-roofing.jpg",
   "/images/service-management.jpg",
@@ -48,11 +48,6 @@ export function ServicesGrid() {
         >
           <path d="M1440 80L0 0V80H1440Z" fill="#1A1A1A" />
         </svg>
-      </div>
-
-      {/* Giant decorative number */}
-      <div className="pointer-events-none absolute -left-8 bottom-0 select-none font-display text-[20rem] leading-none tracking-wide text-white/[0.02] md:text-[28rem]">
-        02
       </div>
 
       {/* Crosshatch SVG texture overlay */}
@@ -99,9 +94,9 @@ export function ServicesGrid() {
             className="lg:col-span-5"
           >
             <p className="text-base leading-relaxed text-gray-500 lg:text-right">
-              From residential renovations to ground-up commercial builds, we
-              manage every phase with precision. Six core capabilities, one
-              standard of excellence.
+              From residential renovations to commercial buildouts and ground-up
+              projects, VVH delivers construction services with disciplined
+              execution, clear communication, and hands-on oversight.
             </p>
           </AnimateOnScroll>
         </div>

@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <div className="flex items-center gap-3">
                     <span className="h-px w-6 bg-red" />
                     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-red">
-                      Free Estimate
+                      Request a Quote
                     </p>
                   </div>
                   <h2 className="mt-3 font-display text-3xl tracking-wide text-white md:text-4xl">

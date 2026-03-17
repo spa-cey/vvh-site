@@ -46,12 +46,11 @@ export function CTASection() {
                   <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
                     Ready to
                     <br />
-                    Build?
+                    Get Started?
                   </h2>
                   <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
-                    Get a free estimate on your next residential or commercial
-                    project. No pressure, no obligation — just an honest
-                    assessment and a clear plan.
+                    We work with residential and commercial clients to turn
+                    ideas into well-managed, well-executed builds.
                   </p>
                 </div>
 
@@ -60,7 +59,7 @@ export function CTASection() {
                     href="/contact"
                     className="group inline-flex items-center gap-3 bg-white px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-red transition-all duration-300 hover:gap-5 hover:bg-black hover:text-white"
                   >
-                    Free Estimate
+                    Request a Quote
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                   <p className="mt-4 text-xs uppercase tracking-[0.15em] text-white/40">
@@ -88,7 +87,7 @@ export function CTASection() {
               <span className="hidden h-3 w-px bg-gray-800 sm:block" />
               <span>Fully Insured</span>
               <span className="hidden h-3 w-px bg-gray-800 sm:block" />
-              <span>Northeast US</span>
+              <span>NJ, NY & PA</span>
               <span className="hidden h-3 w-px bg-gray-800 sm:block" />
               <span>Est. 2016</span>
             </div>

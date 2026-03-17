@@ -193,10 +193,10 @@ export default function AboutPage() {
                   {/* Floating quote */}
                   <div className="absolute -bottom-8 right-0 hidden max-w-xs bg-red p-6 lg:block">
                     <p className="font-display text-lg leading-snug tracking-wide text-white">
-                      &ldquo;Construction doesn&apos;t have to be this hard for the client.&rdquo;
+                      &ldquo;Clients deserve a better building experience.&rdquo;
                     </p>
                     <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                      The Founding Moment
+                      VVH Founding Principle
                     </p>
                   </div>
                 </div>
@@ -216,25 +216,24 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-5 h-px w-24 bg-gradient-to-r from-red to-transparent" />
 
-                <p className="mt-8 text-base leading-relaxed text-gray-400">
-                  Varun, Vishal, and Humza didn&apos;t meet in a boardroom. They
-                  met on job sites across Jersey City and the greater
-                  Tri-State area, working their way up through the trades:
-                  framing, concrete, electrical, project management.
+                <p className="mt-8 text-base leading-relaxed text-gray-300">
+                  VVH Construction Group was founded by professionals with real
+                  field experience and deep roots in the trades. Long before the
+                  company was formed, the work started on job sites across
+                  Jersey City and the surrounding region, where execution,
+                  coordination, and accountability mattered every day.
                 </p>
-                <p className="mt-4 text-base leading-relaxed text-gray-400">
-                  After years of watching projects get mismanaged by companies
-                  that cared more about margins than quality, they decided to do
-                  it themselves. VVH was born out of frustration:
-                  construction doesn&apos;t have to be this hard for the client.
+                <p className="mt-4 text-base leading-relaxed text-gray-300">
+                  After years of seeing projects mishandled by companies that
+                  prioritized margins over quality, VVH was built around a
+                  different standard: clear communication, disciplined
+                  execution, and a better experience for the client.
                 </p>
-                <p className="mt-4 text-base leading-relaxed text-gray-400">
-                  Today, VVH operates across multiple states with a portfolio
-                  that spans high-rise residential towers, commercial retail
-                  buildouts, full-home renovations, and exterior services. But
-                  the principle hasn&apos;t changed: every client gets the same
-                  hands-on attention, whether it&apos;s a kitchen remodel or a
-                  $10M commercial project.
+                <p className="mt-4 text-base leading-relaxed text-gray-300">
+                  Today, VVH delivers residential renovations, commercial
+                  buildouts, exterior restoration, and larger-scale construction
+                  work with the same hands-on approach that shaped the company
+                  from the start.
                 </p>
               </AnimateOnScroll>
             </div>

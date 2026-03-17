@@ -78,7 +78,14 @@ const PROJECTS = [
   },
 ];
 
-const FILTERS = ["All", "Residential", "Commercial", "Renovation", "Exterior", "Roofing"];
+const FILTERS = [
+  "All",
+  "Residential",
+  "Commercial",
+  "Renovation",
+  "Exterior",
+  "Roofing",
+];
 
 export function PortfolioGrid() {
   const [active, setActive] = useState("All");
@@ -90,53 +97,75 @@ export function PortfolioGrid() {
 
   return (
     <>
-      {/* Filter buttons */}
-      <section className="bg-black px-6 pb-8 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-3">
-          {FILTERS.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActive(filter)}
-              className={`px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 ${
-                active === filter
-                  ? "bg-red text-white"
-                  : "border border-charcoal-light text-gray-500 hover:border-red/30 hover:text-white"
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
+      {/* Filter bar */}
+      <section className="bg-black px-6 pb-12 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap gap-2">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActive(filter)}
+                className={`group flex items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                  active === filter
+                    ? "bg-red text-white"
+                    : "border border-white/10 text-gray-500 hover:border-red/30 hover:text-white"
+                }`}
+              >
+                {active === filter && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                )}
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* Results count */}
+          <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-gray-700">
+            {filtered.length} Project{filtered.length !== 1 ? "s" : ""}
+          </p>
         </div>
       </section>
 
       {/* Masonry grid */}
-      <section className="bg-black px-6 pb-24 lg:px-8">
-        <div className="mx-auto max-w-7xl columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <section className="bg-black px-6 pb-32 lg:px-8">
+        <div className="mx-auto max-w-7xl columns-1 gap-5 sm:columns-2 lg:columns-3">
           {filtered.map((project) => (
-            <div
-              key={project.id}
-              className="group mb-4 break-inside-avoid overflow-hidden border border-charcoal-light bg-charcoal"
-            >
-              <div className={`${project.aspect} relative overflow-hidden`}>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-red/0 transition-colors duration-300 group-hover:bg-red/10" />
+              <div key={project.id} className="group mb-5 break-inside-avoid overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
+                <div className={`${project.aspect} relative overflow-hidden`}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/20" />
+                  {/* Red accent bar */}
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-red transition-all duration-500 group-hover:w-full" />
+                  {/* Number */}
+                  <div className="absolute right-3 top-3 font-display text-3xl leading-none text-white/0 transition-all duration-500 group-hover:text-white/20">
+                    {String(project.id).padStart(2, "0")}
+                  </div>
+                </div>
+
+                <div className="border-t border-white/5 p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="h-px w-4 bg-red" />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-red">
+                      {project.type}
+                    </p>
+                  </div>
+                  <p className="mt-2 font-display text-lg tracking-wider text-white">
+                    {project.title}
+                  </p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-500">
+                    {project.desc}
+                  </p>
+                </div>
               </div>
-              <div className="border-t border-charcoal-light p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-red">
-                  {project.type}
-                </p>
-                <p className="mt-1 text-sm font-medium text-white">
-                  {project.title}
-                </p>
-                <p className="mt-1 text-xs text-gray-500">{project.desc}</p>
-              </div>
-            </div>
           ))}
         </div>
       </section>

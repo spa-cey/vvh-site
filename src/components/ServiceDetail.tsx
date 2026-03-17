@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Home,
@@ -8,7 +10,6 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
-import { cn } from "@/lib/utils";
 
 const iconMap = {
   Home,
@@ -34,6 +35,7 @@ interface ServiceDetailProps {
   description: string;
   icon: keyof typeof iconMap;
   reversed?: boolean;
+  index: number;
 }
 
 export function ServiceDetail({
@@ -42,6 +44,7 @@ export function ServiceDetail({
   description,
   icon,
   reversed = false,
+  index,
 }: ServiceDetailProps) {
   const Icon = iconMap[icon];
   const imageSrc = imageMap[id];
@@ -49,45 +52,70 @@ export function ServiceDetail({
   return (
     <section
       id={id}
-      className="scroll-mt-24 border-b border-white/5 px-6 py-20 lg:px-8"
+      className="group/section relative scroll-mt-24 border-b border-white/5 px-6 py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div
-          className={cn(
-            "grid items-center gap-12 lg:grid-cols-2 lg:gap-20",
-            reversed && "lg:[direction:rtl] lg:*:[direction:ltr]"
-          )}
+          className={`grid items-center gap-12 lg:grid-cols-12 lg:gap-8 ${
+            reversed ? "lg:[direction:rtl] lg:*:[direction:ltr]" : ""
+          }`}
         >
-          {/* Service image */}
-          <AnimateOnScroll animation={reversed ? "fade-right" : "fade-left"}>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={imageSrc}
-                alt={title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-red to-transparent" />
-            </div>
-          </AnimateOnScroll>
+          {/* Image — 7 cols */}
+          <div className="lg:col-span-7">
+            <AnimateOnScroll animation={reversed ? "fade-right" : "fade-left"}>
+              <div className="relative">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={imageSrc}
+                    alt={title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover/section:scale-[1.02]"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                  />
+                  {/* Grain */}
+                  <div
+                    className="absolute inset-0 opacity-20 mix-blend-overlay"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                    }}
+                  />
+                  <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-red" />
+                </div>
 
-          {/* Text */}
-          <AnimateOnScroll
-            animation={reversed ? "fade-left" : "fade-right"}
-            delay={150}
-          >
-            <div>
-              <Icon className="h-8 w-8 text-red" />
-              <h2 className="mt-4 font-display text-3xl tracking-wide text-white md:text-4xl">
-                {title}
-              </h2>
-              <div className="mt-3 h-1 w-12 bg-red" />
-              <p className="mt-6 text-base leading-relaxed text-gray-400">
-                {description}
-              </p>
-            </div>
-          </AnimateOnScroll>
+                {/* Floating number */}
+                <div className="absolute -bottom-6 -right-4 hidden font-display text-8xl leading-none text-white/[0.04] lg:block">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+
+          {/* Text — 5 cols */}
+          <div className="lg:col-span-5">
+            <AnimateOnScroll
+              animation={reversed ? "fade-left" : "fade-right"}
+              delay={150}
+            >
+              <div>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center border border-white/10 bg-charcoal">
+                    <Icon className="h-5 w-5 text-red" />
+                  </div>
+                  <span className="font-display text-5xl tracking-wide text-white/[0.06]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h2 className="mt-6 font-display text-4xl leading-[0.95] tracking-wide text-white md:text-5xl">
+                  {title}
+                </h2>
+                <div className="mt-4 h-0.5 w-12 bg-red" />
+                <p className="mt-6 text-base leading-relaxed text-gray-400">
+                  {description}
+                </p>
+              </div>
+            </AnimateOnScroll>
+          </div>
         </div>
       </div>
     </section>

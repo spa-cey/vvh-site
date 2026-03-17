@@ -1,3 +1,5 @@
+"use client";
+
 import { DollarSign, Clock, Award, ShieldCheck } from "lucide-react";
 import { VALUE_PROPS } from "@/lib/constants";
 import { AnimateOnScroll } from "./AnimateOnScroll";
@@ -11,35 +13,102 @@ const iconMap = {
 
 export function ValueProps() {
   return (
-    <section className="bg-black px-6 py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <AnimateOnScroll>
-          <div className="text-center">
+    <section className="relative overflow-hidden bg-black px-6 py-32 lg:px-8">
+      {/* Blueprint grid background */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern
+              id="blueprint"
+              width="80"
+              height="80"
+              patternUnits="userSpaceOnUse"
+            >
+              <rect
+                width="80"
+                height="80"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+              />
+              <rect
+                x="40"
+                y="0"
+                width="0.5"
+                height="80"
+                fill="white"
+                opacity="0.3"
+              />
+              <rect
+                x="0"
+                y="40"
+                width="80"
+                height="0.5"
+                fill="white"
+                opacity="0.3"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#blueprint)" />
+        </svg>
+      </div>
+
+      {/* Giant decorative text */}
+      <div className="pointer-events-none absolute -right-4 top-1/2 -translate-y-1/2 select-none font-display text-[12rem] leading-none tracking-wide text-white/[0.015] md:text-[18rem]">
+        03
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        {/* Asymmetric header */}
+        <div className="mb-20 max-w-2xl">
+          <AnimateOnScroll animation="fade-up">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
               Why VVH
             </p>
-            <h2 className="mt-3 font-display text-4xl tracking-wide text-white md:text-5xl">
-              What Sets Us Apart
+            <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-wide text-white md:text-6xl">
+              The VVH
+              <br />
+              Difference
             </h2>
-            <div className="mx-auto mt-3 h-1 w-16 bg-red" />
-          </div>
-        </AnimateOnScroll>
+            <div className="mt-5 h-px w-32 bg-gradient-to-r from-red to-transparent" />
+          </AnimateOnScroll>
+        </div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 2x2 grid with staggered heights */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALUE_PROPS.map((prop, i) => {
             const Icon = iconMap[prop.icon];
+            // Alternate cards shift down for stagger effect
+            const offsetClass = i % 2 === 1 ? "lg:mt-12" : "";
             return (
-              <AnimateOnScroll key={prop.title} delay={i * 100}>
-                <div className="text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center border border-red/20 bg-charcoal">
-                    <Icon className="h-7 w-7 text-red" />
+              <AnimateOnScroll key={prop.title} delay={i * 120}>
+                <div
+                  className={`group relative overflow-hidden border border-white/5 bg-charcoal p-8 transition-all duration-500 hover:border-red/30 ${offsetClass}`}
+                >
+                  {/* Hover fill effect */}
+                  <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.06] transition-transform duration-500 group-hover:scale-y-100" />
+
+                  {/* Content */}
+                  <div className="relative">
+                    {/* Number + icon row */}
+                    <div className="flex items-start justify-between">
+                      <span className="font-display text-6xl leading-none text-white/[0.06]">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <Icon className="h-6 w-6 text-red transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+
+                    <h3 className="mt-8 font-display text-2xl tracking-wider text-white">
+                      {prop.title}
+                    </h3>
+
+                    {/* Red accent line that grows on hover */}
+                    <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
+
+                    <p className="mt-4 text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
+                      {prop.description}
+                    </p>
                   </div>
-                  <h3 className="mt-5 font-display text-lg tracking-wider text-white">
-                    {prop.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-500">
-                    {prop.description}
-                  </p>
                 </div>
               </AnimateOnScroll>
             );

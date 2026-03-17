@@ -10,9 +10,48 @@ export const COMPANY = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+export const FOUNDERS = [
+  {
+    name: "Varun Kumar",
+    role: "Principal / Co-Founder",
+    bio: "Varun brings over a decade of hands-on experience in large-scale commercial construction across the Northeast. From high-rise residential towers in Jersey City to mixed-use developments in Manhattan, he has managed projects exceeding $50M in value. His background in structural engineering and field operations gives VVH its technical edge. Varun oversees all project execution, subcontractor relationships, and quality control.",
+  },
+  {
+    name: "Vishal Kumar",
+    role: "Principal / Co-Founder",
+    bio: "Vishal\u2019s career in construction began on the ground floor \u2014 literally. Starting as a laborer at 18, he worked his way through every trade before transitioning to project management and business development. His deep understanding of the craft, combined with a sharp eye for opportunity, drives VVH\u2019s growth strategy. Vishal leads client relationships, estimating, and pre-construction planning.",
+  },
+  {
+    name: "Humza Ahmed",
+    role: "Principal / Co-Founder",
+    bio: "Humza is the operational backbone of VVH. With experience spanning residential renovations, commercial buildouts, and exterior restoration services, he ensures every project runs on time and on budget. His background in construction management and logistics keeps VVH\u2019s crews coordinated across multiple active job sites. Humza oversees scheduling, procurement, and safety compliance.",
+  },
+] as const;
+
+export const STATS = [
+  { value: "10+", label: "Years of Experience" },
+  { value: "200+", label: "Projects Completed" },
+  { value: "98%", label: "Client Satisfaction" },
+  { value: "$50M+", label: "Total Project Value" },
+  { value: "0", label: "Safety Violations" },
+  { value: "3", label: "States Served" },
+] as const;
+
+export const CORE_VALUES = [
+  "Accept Responsibility",
+  "Communicate Honestly",
+  "Deliver on Promises",
+  "Treat Every Project Like Our Own",
+  "Never Cut Corners",
+  "Respect Every Trade",
+  "Stay Hungry, Stay Humble",
+  "Build Relationships, Not Just Buildings",
 ] as const;
 
 export const SERVICES = [

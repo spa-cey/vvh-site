@@ -60,8 +60,7 @@ export function PrankPage() {
           width={200}
           height={67}
           className="mb-10 h-auto w-[120px] sm:w-[160px] md:w-[200px]"
-          style={{ filter: "brightness(3) contrast(1.2)" }}
-          priority
+                    priority
         />
 
         <button
@@ -157,8 +156,7 @@ export function PrankPage() {
             width={220}
             height={73}
             className="mx-auto h-auto w-[140px] sm:w-[180px] md:w-[220px]"
-            style={{ filter: "brightness(3) contrast(1.2)" }}
-            priority
+                        priority
           />
         </div>
 

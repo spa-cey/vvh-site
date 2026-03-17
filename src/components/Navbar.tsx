@@ -47,8 +47,7 @@ export function Navbar() {
             width={160}
             height={48}
             className="h-12 w-auto md:h-14"
-            style={{ filter: "brightness(3) contrast(1.2)" }}
-            priority
+                        priority
           />
         </Link>
 

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Users, Target, Hammer, TrendingUp, ArrowRight, HardHat, ClipboardList, Monitor } from "lucide-react";
-import { COMPANY, FOUNDERS, TEAM, PROOF_ITEMS, CORE_VALUES } from "@/lib/constants";
+import { Users, Target, Hammer, TrendingUp, HardHat, ClipboardList, Monitor } from "lucide-react";
+import { FOUNDERS, TEAM, PROOF_ITEMS, CORE_VALUES } from "@/lib/constants";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
@@ -271,99 +270,75 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── WHAT WE DO — staggered cards ── */}
+      {/* ── HOW WE DELIVER ── */}
       <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
-        <div className="pointer-events-none absolute -right-4 top-1/2 -translate-y-1/2 select-none font-display text-[14rem] leading-none tracking-wide text-white/[0.015] md:text-[20rem]">
-          02
-        </div>
-
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-20 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-            <AnimateOnScroll animation="fade-left">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
+          <div className="mb-14 sm:mb-20">
+            <AnimateOnScroll animation="fade-up">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red sm:text-base">
                 What We Do
               </p>
               <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
-                Our Expertise
+                How We Deliver
               </h2>
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="fade-right" delay={200}>
-              <p className="max-w-sm text-sm leading-relaxed text-gray-500 lg:text-right">
-                Four core capabilities that drive every project we deliver.
-              </p>
+              <div className="mt-5 h-px w-32 bg-gradient-to-r from-red to-transparent" />
             </AnimateOnScroll>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: Target,
                 title: "General Contracting",
-                desc: "Full-scope project delivery from permits through punch list. One point of contact, zero headaches.",
+                desc: "We manage projects from permits to punch list with one point of contact, clear coordination, and accountable execution.",
               },
               {
                 icon: Hammer,
-                title: "Pre-Construction",
-                desc: "Value engineering, cost analysis, and feasibility studies before a single shovel hits the ground.",
+                title: "Planning & Pre-Construction",
+                desc: "Before work begins, we help define scope, budget, scheduling, and project approach so the job starts on the right footing.",
               },
               {
                 icon: TrendingUp,
-                title: "Construction Management",
-                desc: "Schedule, budget, and quality oversight for projects where the owner needs a trusted advocate.",
+                title: "Project Management",
+                desc: "We oversee scheduling, budgeting, communication, and quality control to keep projects moving efficiently from start to finish.",
               },
               {
                 icon: Users,
-                title: "Design-Build",
-                desc: "Integrated design and construction under one roof. Faster delivery, fewer change orders.",
+                title: "Design-Build Coordination",
+                desc: "When design and construction need to work together, we streamline the process to reduce delays, improve communication, and simplify delivery.",
               },
-            ].map((item, i) => {
-              const offsetClass = i % 2 === 1 ? "lg:mt-12" : "";
-              return (
-                <AnimateOnScroll key={item.title} delay={i * 120}>
-                  <div
-                    className={`group relative overflow-hidden border border-white/5 bg-charcoal p-8 transition-all duration-500 hover:border-red/30 ${offsetClass}`}
-                  >
-                    <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.06] transition-transform duration-500 group-hover:scale-y-100" />
-                    <div className="relative">
-                      <div className="flex items-start justify-between">
-                        <span className="font-display text-5xl leading-none text-white/[0.06]">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <item.icon className="h-6 w-6 text-red transition-transform duration-300 group-hover:scale-110" />
-                      </div>
-                      <h3 className="mt-8 font-display text-2xl tracking-wider text-white">
-                        {item.title}
-                      </h3>
-                      <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
-                      <p className="mt-4 text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
-                        {item.desc}
-                      </p>
+            ].map((item, i) => (
+              <AnimateOnScroll key={item.title} delay={i * 100}>
+                <div className="group relative h-full overflow-hidden border border-white/5 bg-charcoal p-8 transition-all duration-500 hover:border-red/30">
+                  <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.06] transition-transform duration-500 group-hover:scale-y-100" />
+                  <div className="relative">
+                    <div className="flex items-center gap-4">
+                      <span className="font-display text-2xl tracking-wide text-red sm:text-3xl">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <item.icon className="h-6 w-6 text-red transition-transform duration-300 group-hover:scale-110" />
                     </div>
+                    <h3 className="mt-5 font-display text-xl tracking-wider text-white sm:text-2xl">
+                      {item.title}
+                    </h3>
+                    <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
+                    <p className="mt-4 text-base leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-gray-200">
+                      {item.desc}
+                    </p>
                   </div>
-                </AnimateOnScroll>
-              );
-            })}
+                </div>
+              </AnimateOnScroll>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── CORE VALUES — full-width list ── */}
+      {/* ── CORE VALUES ── */}
       <section className="relative overflow-hidden border-t border-white/5 bg-charcoal px-5 py-20 sm:px-6 md:py-32 lg:px-8">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="values-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                <rect width="80" height="80" fill="none" stroke="white" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#values-grid)" />
-          </svg>
-        </div>
-
         <div className="relative z-10 mx-auto max-w-5xl">
-          <div className="mb-16 text-center">
+          <div className="mb-14 text-center sm:mb-16">
             <AnimateOnScroll animation="fade-up">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red sm:text-base">
                 How We Operate
               </p>
               <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
@@ -375,81 +350,23 @@ export default function AboutPage() {
 
           <div className="space-y-1">
             {CORE_VALUES.map((value, i) => (
-              <AnimateOnScroll key={value} delay={i * 60}>
-                <div className="group flex items-center gap-6 border-b border-white/5 px-4 py-5 transition-all duration-300 hover:bg-red/[0.04]">
-                  <span className="font-display text-3xl tracking-wide text-white/10 transition-colors duration-300 group-hover:text-red/40 md:text-4xl">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="h-px w-8 bg-white/10 transition-all duration-300 group-hover:w-12 group-hover:bg-red/40" />
-                  <span className="font-display text-xl tracking-wider text-gray-300 transition-colors duration-300 group-hover:text-white md:text-2xl">
-                    {value}
-                  </span>
+              <AnimateOnScroll key={value.title} delay={i * 60}>
+                <div className="group border-b border-white/5 px-4 py-6 transition-all duration-300 hover:bg-red/[0.04]">
+                  <div className="flex items-center gap-5">
+                    <span className="font-display text-2xl tracking-wide text-red/60 transition-colors duration-300 group-hover:text-red sm:text-3xl">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-display text-xl tracking-wider text-white sm:text-2xl">
+                      {value.title}
+                    </span>
+                  </div>
+                  <p className="mt-2 pl-[3.25rem] text-base leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300 sm:pl-[3.75rem]">
+                    {value.desc}
+                  </p>
                 </div>
               </AnimateOnScroll>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="relative overflow-hidden bg-black px-5 py-20 sm:px-6 md:py-32 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <AnimateOnScroll animation="scale">
-            <div className="relative overflow-hidden bg-red p-8 sm:p-12 md:p-20">
-              {/* Noise */}
-              <div
-                className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                }}
-              />
-              {/* Diagonal lines */}
-              <div className="absolute -right-20 -top-20 h-80 w-px rotate-45 bg-white/10" />
-              <div className="absolute -left-20 -bottom-20 h-80 w-px rotate-45 bg-white/10" />
-
-              <div className="relative grid items-center gap-10 lg:grid-cols-12">
-                <div className="lg:col-span-8">
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/60">
-                    Start Your Project
-                  </p>
-                  <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                    Let&apos;s Build
-                    <br />
-                    Together
-                  </h2>
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
-                    Whether it&apos;s a ground-up build, a renovation, or a
-                    conversation about what&apos;s possible, we&apos;re ready.
-                  </p>
-                </div>
-                <div className="lg:col-span-4 lg:text-right">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center gap-3 bg-white px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] text-red transition-all duration-300 hover:gap-5 hover:bg-black hover:text-white"
-                  >
-                    Get in Touch
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={`tel:${COMPANY.phone.replace(/[^+\d]/g, "")}`}
-                    className="mt-4 block text-sm font-semibold text-white/50 transition-colors duration-200 hover:text-white"
-                  >
-                    or call {COMPANY.phone}
-                  </a>
-                </div>
-              </div>
-
-              {/* Corner brackets */}
-              <div className="absolute left-6 top-6 h-8 w-8">
-                <div className="absolute left-0 top-0 h-full w-0.5 bg-white/20" />
-                <div className="absolute left-0 top-0 h-0.5 w-full bg-white/20" />
-              </div>
-              <div className="absolute bottom-6 right-6 h-8 w-8">
-                <div className="absolute bottom-0 right-0 h-full w-0.5 bg-white/20" />
-                <div className="absolute bottom-0 right-0 h-0.5 w-full bg-white/20" />
-              </div>
-            </div>
-          </AnimateOnScroll>
         </div>
       </section>
     </>

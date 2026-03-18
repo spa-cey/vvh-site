@@ -60,14 +60,26 @@ export const PROOF_ITEMS = [
 ] as const;
 
 export const CORE_VALUES = [
-  "Accept Responsibility",
-  "Communicate Honestly",
-  "Deliver on Promises",
-  "Treat Every Project Like Our Own",
-  "Never Cut Corners",
-  "Respect Every Trade",
-  "Stay Hungry, Stay Humble",
-  "Build Relationships, Not Just Buildings",
+  {
+    title: "Take Ownership",
+    desc: "We take responsibility for the process, the details, and the outcome from start to finish.",
+  },
+  {
+    title: "Communicate Honestly",
+    desc: "We believe strong projects are built on clear communication, realistic expectations, and direct conversations.",
+  },
+  {
+    title: "Deliver on Promises",
+    desc: "We hold ourselves to the commitments we make and the standards we set.",
+  },
+  {
+    title: "Never Cut Corners",
+    desc: "We do the work the right way, with attention to detail, quality execution, and no shortcuts.",
+  },
+  {
+    title: "Treat Every Project Like Our Own",
+    desc: "We bring pride, care, and hands-on attention to every build, renovation, and restoration project.",
+  },
 ] as const;
 
 export const SERVICES = [

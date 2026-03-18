@@ -39,6 +39,12 @@ export const FOUNDERS = [
 
 export const TEAM = [
   {
+    name: "Nicole Ferrara",
+    role: "Project Manager",
+    icon: "ClipboardList" as const,
+    bio: "Nicole coordinates field operations and project timelines across active residential and commercial jobs. She works closely with subcontractors, clients, and the VVH leadership team to keep every phase of a project organized and on schedule.",
+  },
+  {
     name: "Sanaan Mazhar",
     role: "Technology & Systems",
     icon: "Monitor" as const,

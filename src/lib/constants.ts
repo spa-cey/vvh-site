@@ -39,10 +39,10 @@ export const FOUNDERS = [
 
 export const TEAM = [
   {
-    name: "Alayla Noor",
+    name: "Layla Noor",
     role: "Project Manager",
     icon: "ClipboardList" as const,
-    bio: "Alayla coordinates field operations and project timelines across active residential and commercial jobs. She works closely with subcontractors, clients, and the VVH leadership team to keep every phase of a project organized and on schedule.",
+    bio: "Layla coordinates field operations and project timelines across active residential and commercial jobs. She works closely with subcontractors, clients, and the VVH leadership team to keep every phase of a project organized and on schedule.",
   },
   {
     name: "Sanaan Mazhar",

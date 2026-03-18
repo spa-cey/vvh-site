@@ -153,29 +153,63 @@ export default function AboutPage() {
           </div>
 
           {/* Team */}
-          {TEAM.map((member, i) => (
-            <AnimateOnScroll key={member.name} delay={300 + i * 100}>
-              <div className="mt-5 group relative overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
-                <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.04] transition-transform duration-500 group-hover:scale-y-100" />
-                <div className="relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:gap-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/10 bg-black">
-                    <Monitor className="h-5 w-5 text-red" />
+          <AnimateOnScroll delay={400}>
+            <div className="mt-5 grid gap-5 lg:grid-cols-12">
+              {/* Fake PM dashboard panel */}
+              <div className="hidden overflow-hidden border border-white/5 bg-charcoal lg:col-span-5 lg:block">
+                <div className="border-b border-white/5 px-5 py-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-green-500" />
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">Systems Overview</span>
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl tracking-wider text-white">
-                      {member.name}
-                    </h3>
-                    <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-red">
-                      {member.role}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-300">
-                      {member.bio}
-                    </p>
+                </div>
+                <div className="p-5 space-y-3">
+                  {[
+                    { label: "Website & Hosting", status: "Operational", color: "bg-green-500" },
+                    { label: "CRM Integration", status: "Operational", color: "bg-green-500" },
+                    { label: "Scheduling Platform", status: "Operational", color: "bg-green-500" },
+                    { label: "Document Management", status: "Operational", color: "bg-green-500" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                      <span className="text-xs text-gray-400">{item.label}</span>
+                      <div className="flex items-center gap-2">
+                        <div className={`h-1.5 w-1.5 rounded-full ${item.color}`} />
+                        <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">{item.status}</span>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="mt-2 flex items-center justify-between rounded border border-white/5 bg-black/40 px-4 py-3">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-gray-600">Uptime</span>
+                    <span className="font-display text-lg tracking-wide text-green-500">99.9%</span>
                   </div>
                 </div>
               </div>
-            </AnimateOnScroll>
-          ))}
+
+              {/* Sanaan card */}
+              <div className="lg:col-span-7">
+                {TEAM.map((member) => (
+                  <div key={member.name} className="group relative h-full overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
+                    <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.04] transition-transform duration-500 group-hover:scale-y-100" />
+                    <div className="relative flex h-full flex-col justify-center p-6">
+                      <div className="flex h-12 w-12 items-center justify-center border border-white/10 bg-black">
+                        <Monitor className="h-5 w-5 text-red" />
+                      </div>
+                      <h3 className="mt-5 font-display text-2xl tracking-wider text-white">
+                        {member.name}
+                      </h3>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-red">
+                        {member.role}
+                      </p>
+                      <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
+                      <p className="mt-4 text-sm leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-gray-200">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

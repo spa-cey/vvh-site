@@ -49,7 +49,7 @@ export function Footer() {
           {[...SERVICES, ...SERVICES, ...SERVICES].map((service, i) => (
             <span
               key={i}
-              className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-gray-700"
+              className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-gray-500"
             >
               <span className="h-1 w-1 rounded-full bg-red" />
               {service.title}
@@ -80,7 +80,7 @@ export function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-500">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-400 sm:text-base">
               Full-service construction company delivering residential and
               commercial projects across NJ, NY, and PA.
             </p>
@@ -134,7 +134,7 @@ export function Footer() {
                 <li key={service.id}>
                   <Link
                     href={`/services#${service.id}`}
-                    className="group flex items-center gap-2 text-sm text-gray-500 transition-colors duration-200 hover:text-white"
+                    className="group flex items-center gap-2 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
                   >
                     <span className="h-px w-0 bg-red transition-all duration-300 group-hover:w-3" />
                     {service.title}
@@ -155,7 +155,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-sm text-gray-500 transition-colors duration-200 hover:text-white"
+                    className="group flex items-center gap-2 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
                   >
                     <span className="h-px w-0 bg-red transition-all duration-300 group-hover:w-3" />
                     {link.label}
@@ -165,7 +165,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="group flex items-center gap-2 text-sm text-gray-500 transition-colors duration-200 hover:text-white"
+                  className="group flex items-center gap-2 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
                 >
                   <span className="h-px w-0 bg-red transition-all duration-300 group-hover:w-3" />
                   Request a Quote
@@ -190,7 +190,7 @@ export function Footer() {
                     <Phone className="h-3.5 w-3.5 text-red" />
                   </div>
                   <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">
+                    <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
                       Phone
                     </span>
                     <span className="text-sm text-gray-400 transition-colors duration-200 group-hover:text-white">
@@ -208,7 +208,7 @@ export function Footer() {
                     <Mail className="h-3.5 w-3.5 text-red" />
                   </div>
                   <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">
+                    <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
                       Email
                     </span>
                     <span className="text-sm text-gray-400 transition-colors duration-200 group-hover:text-white">
@@ -222,7 +222,7 @@ export function Footer() {
                   <MapPin className="h-3.5 w-3.5 text-red" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
                     Service Area
                   </span>
                   <span className="text-sm text-gray-400">{COMPANY.area}</span>
@@ -233,7 +233,7 @@ export function Footer() {
                   <Clock className="h-3.5 w-3.5 text-red" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
                     Hours
                   </span>
                   <span className="text-sm text-gray-400">{COMPANY.hours}</span>
@@ -248,7 +248,7 @@ export function Footer() {
               <span className="h-px w-6 bg-red" />
               Get Started
             </h3>
-            <p className="mt-6 text-sm leading-relaxed text-gray-500">
+            <p className="mt-6 text-sm leading-relaxed text-gray-400">
               Ready to start your next project? Get a no-obligation quote
               from our team.
             </p>
@@ -273,10 +273,10 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="relative border-t border-white/5 bg-black/30">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row lg:px-8">
-          <p className="text-xs text-gray-700">
+          <p className="text-xs text-gray-500">
             &copy; 2026 {COMPANY.legal}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-gray-700">
+          <div className="flex gap-6 text-xs text-gray-500">
             <span>Licensed & Insured</span>
             <span className="h-3 w-px bg-gray-800" />
             <span>NJ &middot; NY &middot; PA</span>

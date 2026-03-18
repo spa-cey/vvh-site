@@ -27,7 +27,7 @@ export function AboutPreview() {
               {PROOF_ITEMS.map((item) => (
                 <span
                   key={item}
-                  className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 sm:text-sm"
+                  className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-300"
                 >
                   {item}
                 </span>
@@ -55,7 +55,7 @@ export function AboutPreview() {
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="fade-left" delay={200}>
-              <p className="mt-8 text-base leading-relaxed text-gray-400">
+              <p className="mt-8 text-base leading-relaxed text-gray-300 sm:text-lg">
                 VVH Construction Group is a full-service construction company
                 specializing in residential renovations, commercial buildouts,
                 property restoration, and ground-up construction. With roots in
@@ -63,7 +63,7 @@ export function AboutPreview() {
                 focus on disciplined execution, clear communication, and work
                 that holds up.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-gray-400">
+              <p className="mt-4 text-base leading-relaxed text-gray-300 sm:text-lg">
                 From smaller renovation work to larger-scale construction, our
                 standard stays the same: no shortcuts, no confusion, and no
                 compromise on the work.

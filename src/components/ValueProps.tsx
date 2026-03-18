@@ -84,21 +84,16 @@ export function ValueProps() {
                   {/* Content */}
                   <div className="relative">
                     {/* Number + icon row */}
-                    <div className="flex items-start justify-between">
-                      <span className="font-display text-6xl leading-none text-white/[0.06]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <Icon className="h-6 w-6 text-red transition-transform duration-300 group-hover:scale-110" />
-                    </div>
+                    <Icon className="h-6 w-6 text-red transition-transform duration-300 group-hover:scale-110" />
 
-                    <h3 className="mt-8 font-display text-2xl tracking-wider text-white">
+                    <h3 className="mt-5 font-display text-xl tracking-wider text-white sm:text-2xl">
                       {prop.title}
                     </h3>
 
                     {/* Red accent line that grows on hover */}
                     <div className="mt-3 h-0.5 w-8 bg-red transition-all duration-500 group-hover:w-16" />
 
-                    <p className="mt-4 text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
+                    <p className="mt-4 text-base leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-gray-200">
                       {prop.description}
                     </p>
                   </div>

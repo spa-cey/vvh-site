@@ -48,7 +48,7 @@ export function CTASection() {
                     <br />
                     Get Started?
                   </h2>
-                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
+                  <p className="mt-6 max-w-md text-base leading-relaxed text-white/80 sm:text-lg">
                     We work with residential and commercial clients to turn
                     ideas into well-managed, well-executed builds.
                   </p>
@@ -82,7 +82,7 @@ export function CTASection() {
 
           {/* Bottom trust strip */}
           <AnimateOnScroll animation="fade-up" delay={200}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-700">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
               <span>Fully Licensed</span>
               <span className="hidden h-3 w-px bg-gray-800 sm:block" />
               <span>Fully Insured</span>

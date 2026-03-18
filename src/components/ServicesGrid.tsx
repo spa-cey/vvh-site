@@ -93,7 +93,7 @@ export function ServicesGrid() {
             delay={200}
             className="lg:col-span-5"
           >
-            <p className="text-base leading-relaxed text-gray-500 lg:text-right">
+            <p className="text-base leading-relaxed text-gray-300 sm:text-lg lg:text-right">
               From residential renovations to commercial buildouts and ground-up
               projects, VVH delivers construction services with disciplined
               execution, clear communication, and hands-on oversight.
@@ -137,7 +137,7 @@ export function ServicesGrid() {
                       <h3 className="font-display text-xl tracking-wider text-white transition-colors duration-300 group-hover:text-red sm:text-2xl md:text-3xl">
                         {service.title}
                       </h3>
-                      <p className="mt-1 line-clamp-1 text-sm text-gray-500 transition-colors duration-300 group-hover:text-gray-400">
+                      <p className="mt-1 line-clamp-1 text-sm text-gray-400 transition-colors duration-300 group-hover:text-gray-300 sm:text-base">
                         {service.summary}
                       </p>
                     </div>

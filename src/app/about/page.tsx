@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Users, Target, Hammer, TrendingUp, ArrowRight, HardHat, ClipboardList, Monitor } from "lucide-react";
-import { COMPANY, FOUNDERS, PROOF_ITEMS, CORE_VALUES } from "@/lib/constants";
+import { COMPANY, FOUNDERS, TEAM, PROOF_ITEMS, CORE_VALUES } from "@/lib/constants";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 
 export const metadata: Metadata = {
@@ -119,9 +119,9 @@ export default function AboutPage() {
             </AnimateOnScroll>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-3">
             {FOUNDERS.map((founder, i) => {
-              const iconMap: Record<string, typeof HardHat> = { HardHat, Target, ClipboardList, Monitor };
+              const iconMap: Record<string, typeof HardHat> = { HardHat, Target, ClipboardList };
               const Icon = iconMap[founder.icon] || Users;
               return (
                 <AnimateOnScroll key={founder.name} delay={i * 100}>
@@ -151,6 +151,31 @@ export default function AboutPage() {
               );
             })}
           </div>
+
+          {/* Team */}
+          {TEAM.map((member, i) => (
+            <AnimateOnScroll key={member.name} delay={300 + i * 100}>
+              <div className="mt-5 group relative overflow-hidden border border-white/5 bg-charcoal transition-all duration-500 hover:border-red/30">
+                <div className="absolute inset-0 origin-bottom scale-y-0 bg-red/[0.04] transition-transform duration-500 group-hover:scale-y-100" />
+                <div className="relative flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/10 bg-black">
+                    <Monitor className="h-5 w-5 text-red" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl tracking-wider text-white">
+                      {member.name}
+                    </h3>
+                    <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-red">
+                      {member.role}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-300">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          ))}
         </div>
       </section>
 

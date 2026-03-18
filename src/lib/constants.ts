@@ -35,6 +35,9 @@ export const FOUNDERS = [
     icon: "ClipboardList" as const,
     bio: "Humza drives the operational side of VVH, coordinating scheduling, procurement, and project flow across residential and commercial work. With a hands-on approach and strong oversight of day-to-day execution, he helps ensure projects stay organized, efficient, and on track.",
   },
+] as const;
+
+export const TEAM = [
   {
     name: "Sanaan Mazhar",
     role: "Technology & Systems",
